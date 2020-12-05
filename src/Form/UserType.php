@@ -18,16 +18,16 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', TextType::class)
-            ->add('lastname', TextType::class)
-            ->add('email', EmailType::class)
+            ->add('firstname', TextType::class, ['label' => 'Prénom'])
+            ->add('lastname', TextType::class, ['label' => 'Nom'])
+            ->add('email', EmailType::class, ['label' => 'Email'])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
-                'first_options' => ['label' => 'Password'],
-                'second_options' => ['label' => 'Confirm Password']
+                'first_options' => ['label' => 'Mot de passe'],
+                'second_options' => ['label' => 'Confirmez le mot de passe']
             ])
             ->add('avatar', FileType::class, [
-                'label' => 'Avatar',
+                'label' => 'Photo de profil',
 
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,
@@ -45,7 +45,7 @@ class UserType extends AbstractType
                         //     'application/jpg',
                         //     'application/png',
                         // ],
-                        'mimeTypesMessage' => 'Please upload a valid picture',
+                        'mimeTypesMessage' => 'Chargez un fichier valide.',
                     ])
                 ],
             ]);
