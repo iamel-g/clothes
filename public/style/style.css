@@ -1,0 +1,36 @@
+/* Forms register/login */
+
+label.required:after {
+    content: " *";
+    color: #ff0000;
+}
+
+.form-control:focus{
+    border-color: #0000006e;  
+    box-shadow:0 0 4px #474747; 
+    -webkit-box-shadow: 0 0 4px #474747;
+}
+
+.asterisk {
+    color: #ff0000;
+}
+
+a {
+    color: grey;
+    text-decoration: none!important;
+}
+
+/* User profile */
+
+#userProfile, ul {
+    list-style: none;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
