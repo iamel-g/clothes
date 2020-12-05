@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ml-md-auto">
+            <div class="card bg-light mb-3 mt-5" style="width: 800px">
+                <div class="card-body">
+                    <h1 class="pb-3">Bonjour {{ user.firstname }} !</h1>
+
+                    <div id="img" class="text-center pb-5"><img src='/profile/uploads/avatars/{{user.avatar}}' width="100px" height="100px"/></div>
+
+                    <p class="pb-1">Ici, tu trouveras un récapitulatif des informations que tu as fourni lors de ton inscription.</p>
+                    <ul class="p-0"> 
+                        <li>Nom : {{ user.lastname }}</li>
+                        <li>Prénom : {{ user.firstname }}</li>
+                        <li>Adresse email : {{ user.email }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
