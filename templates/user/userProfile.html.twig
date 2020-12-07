@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!
+{% block title %}Espace de {{ user.firstname }}
 {% endblock %}
 
 {% block body %}
@@ -12,9 +12,11 @@
 						<h1 class="pb-3">Bonjour
 							{{ user.firstname }}
 							!</h1>
-
+						{% if user.avatar %}
 						<div id="img" class="text-center pb-5"><img src='/profile/uploads/avatars/{{user.avatar}}' width="100px" height="100px"/></div>
-
+						{% else %}
+						<div id="img" class="text-center pb-5"><img src='/profile/avatar.png' width="100px" height="100px"/></div>
+						{% endif %}
 						<p class="pb-1">Ici, tu trouveras un récapitulatif des informations que tu as fourni lors de ton inscription.</p>
 						<ul class="p-0">
 							<li>Nom :

@@ -20,7 +20,7 @@ class UserController extends AbstractController
     {
         $this->passwordEncoder = $passwordEncoder;
     }
-    
+
     /**
      * @Route("/registration", name="registration")
      */

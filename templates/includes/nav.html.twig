@@ -1,26 +1,32 @@
-<div class="col-md-3 p-0">
-	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="{{ path('home') }}"><h3>Clothes</h3></a>
+<div id="principal_nav" class="col-md-3 p-0">
+	<nav class="navbar-dark bg-dark">
+		<a class="navbar-brand" href="{{ path('home') }}"><h2 class="ml-2">CLOTHES</h2></a>
 		{# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button> #}
 		<div class="col-12" id="navbarText">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Home
+					<a class="nav-link" href="{{ path('home') }}">Accueil
 						<span class="sr-only">(current)</span>
 					</a>
 				</li>
+				{% if app.user %}
 				<li class="nav-item">
-					<a class="nav-link" href="#">Features</a>
+					<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Pricing</a>
+					<a class="nav-link" href="{{ path('profile_user') }}">Ton espace</a>
 				</li>
+				{% else %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('registration') }}">Inscription</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+				</li>
+				{% endif %}
 			</ul>
-			<span class="navbar-text">
-				Navbar text with an inline element
-			</span>
 		</div>
 	</nav>
 </div>

@@ -20,6 +20,12 @@ a {
     text-decoration: none!important;
 }
 
+/* Principal nav */
+
+#principal_nav nav {
+    height: 100vh;
+}
+
 /* User profile */
 
 #userProfile, ul {
